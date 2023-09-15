@@ -26,10 +26,10 @@ signupLink.addEventListener('click', (event) => {
 });
 
 // document.getElementById("login_to_index").addEventListener('click', function(){
-//   window.location.href = 'index.HTML'
+//   window.location.href = 'index.html'
 // })
 // document.getElementById("signup_to_index").addEventListener('click', function(){
-//   window.location.href = 'index.HTML'
+//   window.location.href = 'index.html'
 // })
 
 function btnsignup() {
@@ -98,7 +98,7 @@ function btnsignup() {
 
         alert("Sign up successful!");
         // document.write(userData.user_f)
-        window.location.href = "index.HTML";
+        window.location.href = "index.html";
       }
     } else {
       var userData = {
@@ -111,7 +111,7 @@ function btnsignup() {
       localStorage.setItem("userdata", JSON.stringify(dataArray));
       localStorage.setItem("current_user", userData.user_f);
       alert("Sign up successful!");
-      window.location.href = "index.HTML";
+      window.location.href = "index.html";
 
       document.getElementById("signupForm").reset();
     }
@@ -135,7 +135,7 @@ function loginbtn() {
         (x) => x.email == email && x.password == password
       )[0];
       localStorage.setItem("current_user", current_user.user_f);
-      window.location.href = "index.HTML";
+      window.location.href = "index.html";
       alert("Login successful!");
     } else {
       alert("Login failed. Invalid email or password.");
