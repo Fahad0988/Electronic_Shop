@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Shop</title>
+
+  <!--         Link cdns        -->
+
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="" class="logo"><i class="fa fa-television"></i><span>E</span>lectronic Shop</a>
+
+    <nav class="navbar">
+      <a href="#Home">Home</a>
+      <a href="#Features">Features</a>
+      <a href="#Products">Products</a>
+      <a href="#Categories">Categories</a>
+      <a href="#Contact">Contact</a>
+    </nav>
+
+    <div class="icons">
+      <div class="fa fa-bars" id="menu-btn"></div>
+        <div class="fa fa-shopping-cart" id="cart">
+        <span class="cart-quantity"></span>
+      </div>
+      <div id="login-btn"><a href="Login.html" class="fa fa-user"></a></div>
+      <div id="user_login"></div>
+      <script>
+        var user_icon = document.getElementById("login-btn");
+        var user_name = document.getElementById("user_login");
+        var userdata = JSON.parse(localStorage.getItem("userdata"));
+        var activeUser = localStorage.getItem("current_user");
+        if (activeUser) {
+          // user_name.style.display = "flex";
+          user_icon.style.display = "none";
+          user_name.innerHTML = activeUser;
+        } else {
+          user_name.style.display = "none";
+          user_icon.style.display = "flex";
+        }
+
+      </script>
+      <button type="button" class="div_logout" id="logout_btn">
+        log out
+      </button>
+    </div>
+
+    
+  </header>
+
+  
+<!--  cart modal  -->
+<div class="cart-modal-overlay">
+  <div class="cart-modal">
+      <i id="close-btn" class="fas fa-times"></i>
+      <h1 class="cart-is-empty">Cart is empty</h1>
+
+      <div class="product-rows">
+      </div>
+      <div class="total">
+          <h1 class="cart-total">TOTAL</h1>
+          <span class="total-price">$0</span>
+          <button class="purchase-btn">PURCHASE</button>
+      </div>
+  </div>
+</div>
+<!--   end of cart modal -->
+
+  <!-- Section home -->
+
+
+  <section class="Section-home" id="Home">
+
+    <div class="home_content">
+      <h3>Electronic Products
+        <br>
+        Up To <span>50%</span> off
+      </h3>
+      <p id="element"></p>
+      <a href="#Products" class="btn_home" id="shop_now">Shop Now</a>
+    </div>
+
+  </section>
+
+
+  <!-- Section Feature -->
+
+
+  <section class="Section-Feature" id="Features">
+
+    <h1 class="heading"> our <span>Features</span> </h1>
+
+    <div class="box-container">
+      <div class="box-f" data-aos="zoom-in">
+        <img src="Images/Feauter-page.png" alt="" width="100">
+        <h3>A1 Quality</h3>
+
+        <p>Superior performance: Our electronic items deliver exceptional performance, ensuring a smooth and efficient
+          user experience.</p>
+
+
+
+        <a href="" class="btn-read" data-bs-toggle="modal" data-bs-target="#exampleModal">Readmore</a>
+      </div>
+
+      <div class="box-f" data-aos="zoom-in">
+        <img src="Images/Bike_Delivery.png" alt="" width="100">
+        <h3>Free Delivrey</h3>
+
+        <p>Smartphones: The latest models from brands like Apple, Samsung, Google, or OnePlus are usually in high
+          demand.</p>
+
+        <a href="" class="btn-read" data-bs-toggle="modal" data-bs-target="#exampleModal2">Readmore</a>
+
+      </div>
+
+      <div class="box-f" data-aos="zoom-in">
+        <img src="Images/online_pay.png" alt="" width="100">
+        <h3>Esay Payment</h3>
+
+        <p>Buy Now, Pay Later: Shop today, pay in installments.
+
+          Zero-Interest Installments: Split payments without extra fees.</p>
+
+        <a href="" class="btn-read" data-bs-toggle="modal" data-bs-target="#exampleModal3">Readmore</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Readmore popup box -->
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h5 class="modal-title" id="exampleModalLabel">A1 Quality</h5>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>1. Superior performance: Our electronic items deliver exceptional performance, ensuring a smooth and
+            efficient</p>
+          <p>2. Cutting-edge technology: Embrace the latest advancements in technology with our state-of-the-art
+            electronic products.</p>
+          <p>3. Trusted brand: We are a reputable brand known for delivering A1 quality products and exceptional
+            customer service.</p>
+          <p>4. Durability: Our electronic items are built to last, providing long-lasting reliability and
+            functionality.</p>
+          <p>5. Extensive warranty: Enjoy peace of mind with an extensive warranty that covers any potential
+            manufacturing defects.</p>
+          <p>6. Ultra-HD Smart LED TV: Immerse yourself in stunning visuals with this A1 quality Smart LED TV featuring
+            Ultra-HD resolution, seamless connectivity, and vibrant colors.</p>
+          <p>7. High-Performance Gaming Laptop: Take your gaming to the next level with this A1 quality laptop equipped
+            with a powerful processor, dedicated graphics, and high refresh rate display.</p>
+          <p>8. Wireless Noise-Canceling Headphones: Enjoy crystal-clear sound and peace from external disturbances with
+            these A1 quality wireless headphones featuring active noise-canceling technology.</p>
+          <p>9. Top-of-the-Line Smartphone: Stay connected and productive with this A1 quality smartphone boasting a
+            high-resolution display, impressive camera capabilities, and long-lasting battery life.</p>
+          <p>10. Professional-grade DSLR Camera: Capture breathtaking moments with precision and clarity using this A1
+            quality DSLR camera, perfect for photography enthusiasts and professionals alike.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal 2 -->
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h5 class="modal-title" id="exampleModalLabel">Free Delivrey</h5>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>1. Smartphones: The latest models from brands like Apple, Samsung, Google, or OnePlus are usually in high
+            demand.</p>
+          <p>2. Laptops: Popular laptop brands like Dell, HP, Lenovo, and Apple MacBook may offer free delivery options.
+          </p>
+          <p>3. Tablets: Apple iPads, Samsung Galaxy Tabs, and other Android tablets are frequently sought after.</p>
+          <p>4. Smart TVs: High-quality smart TVs from brands like LG, Samsung, Sony, or TCL might come with free
+            shipping
+            offers.</p>
+          <p>5. Gaming Consoles: Microsoft Xbox and Sony PlayStation consoles are often popular choices.</p>
+          <p>6. E-book reader: Carry thousands of books in a lightweight device with a glare-free reading experience.
+          </p>
+          <p>7. Fitness tracker: Monitor your daily activity, heart rate, and sleep patterns for a healthier lifestyle.
+          </p>
+          <p>8. Wireless router: Connect multiple devices to the internet with fast and reliable Wi-Fi signal.</p>
+          <p>9. Smart home hub: Control your home appliances, lights, and security systems with voice commands.</p>
+          <p>10. Drone: Capture breathtaking aerial photos and videos with a remote-controlled flying device.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h5 class="modal-title" id="exampleModalLabel">Esay Payment</h5>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>1. Buy Now, Pay Later: Shop today, pay in installments.</p>
+          <p>2. EMI (Equated Monthly Installments): Monthly payment plans for big purchases.</p>
+          <p>3. Mobile Wallets: Convenient and secure smartphone payments.</p>
+          <p>4. Contactless Payment: Quick tap-to-pay transactions.</p>
+          <p>5. Online Payment: Hassle-free payments from the comfort of your home.</p>
+          <p>6. Flexible Financing: Tailored payment options to suit your needs.</p>
+          <p>7. Instant Approval: Get approved quickly for easy payments.</p>
+          <p>8. Zero-Interest Installments: Split payments without extra fees.</p>
+          <p>9. No Credit Check: Some options don't require a credit check.</p>
+          <p>10. Affordable Down Payments: Get started with a small upfront payment.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Readmore popup box -->
+
+
+
+
+  <!-- Section Products -->
+
+
+  <section class="Section-Product" id="Products">
+
+    <h1 class="heading"> our <span>Products</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/iphone xs.jpg" alt="">
+          <h5>Iphone XS</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$1100.50</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/Apple Watch 3.png" alt="">
+        <h5>Apple Watch 3</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$120.00</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/ONIKUMA 10.png" alt="">
+      <h5>ONIKUMA 10</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$110.99</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/Realme Narzo 50Pro.png" alt="">
+    <h5>Narzo 50Pro</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$230.00</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+
+   
+
+  </section>
+
+  <!-- Section Categories -->
+
+
+  <section class="Section-Categories" id="Categories">
+
+
+    <h1 class="heading-items"><span>Smart Phone</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/Iphone 14Pro Max.png" alt="">
+          <h5>Iphone 14Pro Max</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$999.99</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/Huawei Mate 40Pro.jpg" alt="">
+        <h5>Huawei Mate 40Pro</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$1240.99</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/Oppo F21 Pro.jpg" alt="">
+      <h5>Oppo F21 Pro</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$350.90</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/Vivo y20.jpg" alt="">
+    <h5>Vivo y20</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$122.99</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+
+    <br>
+    <br>
+
+
+    <h1 class="heading-items"><span>Camera</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/Nikon_D5_DSLR_SB-5000.png" alt="">
+          <h5>Nikon_D5_SB-5000</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$599.00</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/Canon_EOS_5D.png" alt="">
+        <h5>Canon_EOS_5D</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$2499.00</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/FujiFilm_X70_XDCAM.png" alt="">
+      <h5>FujiFilm X70_XDCAM</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$699.00</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/Sony_NXCAM_HXR-NX100.png" alt="">
+    <h5>Sony HXR-NX100</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$1499.00</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+    <br>
+    <br>
+
+
+    <h1 class="heading-items"><span>AC</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/LG AC-12BQ.png" alt="">
+          <h5>LG AC-12BQ</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$1100.99</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/Ductless Air.png" alt="">
+        <h5>Ductless Air</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$1530.90</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/Szuper.png" alt="">
+      <h5>Szuper</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$1900.99</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/Samsung AR-18.png" alt="">
+    <h5>Samsung AR-18</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$1200.00</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+
+    <br>
+    <br>
+
+
+    <h1 class="heading-items"><span>Fridge</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/Matte Black.png" alt="">
+          <h5>Matte Black</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$1200.00</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/AEG Santo.png" alt="">
+        <h5>AEG Santo</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$1300.50</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/Whirlpool WRE57K2.png" alt="">
+      <h5>Whirlpool</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$1100.99</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/LG Nevera.png" alt="">
+    <h5>LG Nevera</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$1600.00</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+
+    <br>
+    <br>
+
+
+    <h1 class="heading-items"><span>Laptop</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/Aspire M5.png" alt="">
+          <h5>Aspire M5</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$750.00</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/Asus Flip-2.png" alt="">
+        <h5>Asus Flip-2</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$890.00</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/HP Hewlett.png" alt="">
+      <h5>HP Hewlett</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$560.00</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/Asus Zenbook.png" alt="">
+    <h5>Asus Zenbook</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$920.00</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+
+    <br>
+    <br>
+
+
+    <h1 class="heading-items"><span>PC Moniter</span></h1>
+
+    <div class="card-container" id="ID_products">
+
+      <div class="card-2 card">
+          <img class="product-image" src="Images/Acer Predator.png" alt="">
+          <h5>Acer Predator</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <span class="product-price">$1750.00</span>
+          <button class="add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="card-2 card">
+        <img class="product-image" src="Images/LG Curved-Ultra.png" alt="">
+        <h5>LG Curved-Ultra</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <span class="product-price">$2000.00</span>
+        <button class="add-to-cart">Add to cart</button>
+    </div>
+    
+    <div class="card-2 card">
+      <img class="product-image" src="Images/Asus ROG.png" alt="">
+      <h5>Asus ROG</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <span class="product-price">$1900.00</span>
+      <button class="add-to-cart">Add to cart</button>
+  </div>
+
+  <div class="card-2 card">
+    <img class="product-image" src="Images/Dell Ultra HD-5K.png" alt="">
+    <h5>Dell Ultra HD-5K</h5>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <span class="product-price">$1700.99</span>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+      
+     
+  </div>
+
+  </section>
+
+  <!-- Section Contact -->
+
+  <section class="section-con" id="Contact">
+
+    <div class="section-contact">
+
+      <div class="container">
+
+        <h1 class="heading"> our <span>Contact </span> </h1>
+
+        <p>
+          Welcome to our Contact Us page! We value your feedback, inquiries, and suggestions. Whether you have
+          questions about our products or services, need assistance, or simply want to say hello, we're here
+          to help!</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-home"></i>
+            </div>
+
+            <div class="contact-info-content">
+              <h4>Address</h4>
+              <p> SD-1, Block A <br /> North Nazimabad Town,<br /> Karachi, 74700</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+
+            <div class="contact-info-content">
+              <h4>Phone</h4>
+              <p>92+ 3142113961</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+
+            <div class="contact-info-content">
+              <h4>Email</h4>
+              <p>www.ElectronicShop.Com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form action="" id="contact-form">
+              <h2 id="form-title">Send Message</h2>
+              <div class="input-box">
+                  <input type="text" id="fullname" required>
+                  <span id="span1">Full Name</span>
+              </div>
+      
+              <div class="input-box">
+                  <input type="email" id="email" required>
+                  <span id="span2">Email</span>
+              </div>
+      
+              <div class="input-box">
+                  <textarea id="message" required></textarea>
+                  <span id="span3">Type your Message...</span>
+              </div>
+      
+              <div class="input-box">
+                  <input type="submit" value="Send" name="">
+              </div>
+          </form>
+      </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Section Contact -->
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+  <!-- Section Footer -->
+
+  <section class="footer-section">
+
+    <div class="footer-container">
+
+      <div class="footer-box">
+
+        <h3><i class="fa fa-television" id="logo-icon"></i><span>E</span>lectronic Shop</h3>
+        <p>Feel Free To Follow Us On Our Social Media Handlers All The Links Are Given Below.</p>
+
+        <div class="share">
+
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-box">
+
+        <h3>Contact Info</h3>
+
+        <a href="#" class="links"><i class="fa fa-phone"></i> +92 3142113961</a>
+        <a href="#" class="links"><i class="fa fa-phone"></i> +92 3131132234</a>
+        <a href="#" class="links"><i class="fa fa-envelope"></i> www.ElectronicShop.Com</a>
+        <a href="#" class="links"><i class="fa fa-map-marker"></i> North Nazimabad, Pakistan</a>
+
+      </div>
+
+
+      <div class="footer-box">
+
+        <h3>Quicks Links</h3>
+
+        <a href="#Home" class="links"><i class="fa fa-arrow-right"></i> Home</a>
+        <a href="#Features" class="links"><i class="fa fa-arrow-right"></i> Features</a>
+        <a href="#Products" class="links"><i class="fa fa-arrow-right"></i> Products</a>
+        <a href="#Categories" class="links"><i class="fa fa-arrow-right"></i> Categories</a>
+        <a href="#Contact" class="links"><i class="fa fa-arrow-right"></i> Contact</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="credit">
+      Created By <span> Fahad & Usman </span>| All Rights Reserved
+    </div>
+
+
+  </section>
+
+
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/jquery3.1.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="index.js"></script>
+
+  <script>
+   
+    $(document).ready(function () {
+      $("#user_login").click(function () {
+        $("#logout_btn").toggle(100);
+      });
+    });
+    // var user_name = document.getElementById("user_name");
+    // var user_icon = document.getElementById("user_icon");
+    var log_out = document.getElementById("logout_btn");
+    log_out.addEventListener("click", function () {
+      localStorage.removeItem("current_user");
+      user_name.style.display = "none";
+      user_icon.style.display = "flex";
+      log_out.style.display = "none";
+    });
+    document
+      .getElementById("shop_now")
+      .addEventListener("click", function () {
+        if (
+          user_name.style.display == "none" &&
+          user_icon.style.display == "flex"
+        ) {
+          window.location.href = "signup.html";
+        } else {
+          window.location.href = "#Products";
+        }
+
+      });
+
+  </script>
+
+</body>
+
+</html>

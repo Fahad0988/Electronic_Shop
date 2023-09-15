@@ -1,0 +1,104 @@
+:root {
+    --main-bg-color: #009d63;
+    --main-text-color: #009d63;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
+}
+
+.primary-text {
+    -webkit-text-fill-color: #009d63;
+}
+
+.second-text {
+    -webkit-text-fill-color: #bbbec5;
+}
+.second-text:hover {
+    -webkit-text-fill-color: #130f40;
+}
+.primary-bg {
+    background-color: #009d63;
+}
+.span-logo{
+    -webkit-text-fill-color: #130f40;
+}
+.secondary-bg {
+    background-color: #c1efde;
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+.btn a{
+text-decoration: none;
+color: white;
+}
+.btn:hover{
+   background-color: #130f40;
+   color: white;
+    }
+   
+
+#wrapper {
+    overflow: hidden;
+    background: linear-gradient(to right,
+            #baf3d7,
+            #c2f5de,
+            #cbf7e4,
+            #d4f8ea,
+            #ddfaef);
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+
+.sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+.list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.active {
+    background-color: transparent;
+    -webkit-text-fill-color: #009d63;
+    font-weight: bold;
+    border: none;
+}
+
+@media (min-width:768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+    
+}

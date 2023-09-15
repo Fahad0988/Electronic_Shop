@@ -1,0 +1,137 @@
+.tab-style {
+    font-size: 20px;
+    width: 50%;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.nav-tabs>li>a {
+    margin-right: 0px;
+    color: #009d63;
+}
+
+.group2 {
+    position: relative;
+    margin-top: 16px;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    background-color: #e5ecf4;
+    color: #130f40;
+}
+
+
+
+.modal-header {
+    background-color: #e5ecf4;
+}
+
+.group {
+    position: relative;
+    margin-top: 30px;
+}
+
+.input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    background: none;
+    color: #636363;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+}
+
+.input:focus {
+    outline: none;
+}
+
+
+.label {
+    color: #130f40;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: -10px;
+    top: 10px;
+    transition: all 0.2s ease;
+}
+
+
+.input:focus~.label,
+.input.used~.label {
+    top: -20px;
+    transform: scale(.75);
+    left: -15px;
+    color: #009d63;
+}
+
+.container {
+    margin-top: 25rem;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: 2px solid #130f40;
+    color: #130f40;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    background: none;
+}
+
+.input:focus~.label,
+.input.used~.label {
+    top: -20px;
+    transform: scale(.75);
+    left: -15px;
+    color: #009d63;
+}
+
+.btn:hover {
+    background: #009d63;
+    color: white;
+}
+
+.login-shadow {
+    -webkit-box-shadow: 5px -5px 6px 0px rgba(82, 82, 82, 0.52);
+    -moz-box-shadow: 5px -5px 6px 0px rgba(82, 82, 82, 0.52);
+    box-shadow: 5px -5px 6px 0px rgba(82, 82, 82, 0.52);
+    z-index: 1;
+}
+
+.signup-shadow {
+    -webkit-box-shadow: -5px 0px 6px 0px rgba(82, 82, 82, 0.52);
+    -moz-box-shadow: -5px -5px 6px 0px rgba(82, 82, 82, 0.52);
+    box-shadow: -5px 0px 6px 0px rgba(82, 82, 82, 0.52);
+}
+.red{
+    color: red;
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    #myModal {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #myModal .modal-dialog {
+        width: 500px;
+    }
+
+    .modal-body {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

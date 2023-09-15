@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div class="toggle_back" id="signup_to_index">
+        <i class="fa fa-angle-left" style="font-size:30px"></i>Back
+      </div>
+          <div class="container">
+      
+              <div class="form-container" id="login-form">
+    <h1>Sign Up</h1>
+
+          <form id="signupForm">
+
+            <label>Username</label>
+            <input type="text" id="new-username">
+            <span class="red" id="username_Error"></span><br>
+
+            <label>Email</label>
+            <input type="email" id="new-email">
+            <span class="red" id="email_Error"></span><br>
+
+            <label>Password</label>
+            <input type="password" id="new-password">
+            <span class="red" id="pass_Error"></span><br>
+            
+
+            <button type="button" onclick="btnsignup()" >Sign Up</button>
+
+          </form>
+
+          <p>Already have an account? <a href="Login.html">Login</a></p>
+
+        </div>
+
+      </div>
+      
+      
+<script src="Login.JS"></script>
+<script>
+    document.getElementById("signup_to_index").addEventListener('click', function(){
+  window.location.href = 'index.html'
+})
+</script>
+</body>
+</html>

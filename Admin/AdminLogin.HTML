@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="AdminLogin.CSS">
+</head>
+
+<body>
+
+  <div class="container">
+    <br>
+
+    <center>
+
+      <button class="btn" href="#signup" data-toggle="modal" data-target=".log-sign">Admin Login</button>
+
+    </center>
+
+    <br>
+
+  </div>
+
+  <!-- Modal -->
+
+  <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" aria-labelledby="mySmallModalLabel">
+    
+    <div class="modal-dialog modal-sm">
+
+      <div class="modal-content">
+
+        <div class="bs-example bs-example-tabs">
+
+          <ul id="myTab" class="nav nav-tabs">
+
+            <li id="tab1" class=" active tab-style login-shadow ">
+
+              <a href="#signin" data-toggle="tab">Log In</a>
+
+            </li>
+            
+            <li id="tab2" class=" tab-style ">
+
+              <a href="#signup" data-toggle="tab">Sign Up</a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="modal-body">
+
+          <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade active in" id="signin">
+
+              <form id="LoginForm"> 
+
+                <fieldset>
+
+                  <div class="group">
+
+                    <input class="input" type="email" id="loginEmail">
+                    <label class="label">Email Address</label>
+
+                  </div>
+
+                  <div class="group">
+
+                    <input class="input" type="password" id="loginPassword">
+                    <label class="label">Password</label>
+
+                  </div>
+
+                  <div class="control-group">
+
+                    <label class="control-label"></label>
+
+                    <div class="controls">
+
+                      <button type="button" id="signin" class="btn btn-block" onclick="Adminloginbtn()">Log In</button>
+
+                    </div>
+
+                  </div>
+
+                </fieldset>
+
+              </form>
+
+            </div>
+
+            <div class="tab-pane fade" id="signup">
+
+              <form id="signupForm">
+
+                <fieldset>
+
+                  <div class="group">
+
+                    <input class="input" type="text" id="SignName">
+                    <span class="red" id="SignName_Error"></span>
+                    <label class="label">First Name</label>
+
+                  </div>
+                  
+                  <div class="group">
+
+                    <input class="input" type="email" id="SignEmail">
+                    <span class="red" id="SignEmail_Error"></span>
+                    <label class="label">Email</label>
+
+                  </div>
+                  <div class="group">
+
+                    <input class="input" type="password" id="SignPassword">
+                    <span class="red" id="SignPassword_Error"></span>
+                    <label class="label">Password</label>
+
+                  </div>
+                  <div class="group2">
+
+                    <input class="input" type="password" id="SignConfPass">
+                    <span class="red" id="SignConfPass_Error"></span>
+                    <label class="label">Confirm Password</label>
+                    
+
+                  </div>
+                  <div class="control-group">
+
+                    <label class="control-label"></label>
+
+                    <div class="controls">
+
+                      <button type="button" id="confirmsignup" class="btn btn-block" onclick=" btnAdminsignup()">Sign Up</button>
+
+                    </div>
+
+                  </div>
+
+                </fieldset>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="AdminLogin.JS" ></script>
+
+  <script>
+    function btnAdminsignup() {
+      var SignName = document.getElementById("SignName").value;
+      var SignName_Error = document.getElementById("SignName_Error");
+      var SignName_regexp = /[a-z]{3,}[0-9]{0,}/
+      var SignName_input_check = SignName_regexp.test(SignName)
+      var SignEmail = document.getElementById("SignEmail").value;
+      var SignEmail_Error = document.getElementById("SignEmail_Error");
+      var SignEmail_regexp = /[a-z]{3,}[0-9]{0,}@[a-z]{4,}.[a-z]{2,}/;
+      var SignEmail_input_check = SignEmail_regexp.test(SignEmail);
+      var SignPassword = document.getElementById("SignPassword").value;
+      var SignPassword_Error = document.getElementById("SignPassword_Error");
+      var SignPassword_regexp = /.{8,}/;
+      var SignPassword_input_check = SignPassword_regexp.test(SignPassword);
+      var SignConfPass = document.getElementById("SignConfPass").value;
+      var SignConfPass_Error = document.getElementById("SignConfPass_Error");
+      if(SignName == ""){
+        SignName_Error.innerHTML = '*write the name here*'
+      }
+      else if (!SignName_input_check) {
+        SignName_Error.innerHTML = '*write correct name*'
+      }
+      else if(SignEmail == ""){
+        SignEmail_Error.innerHTML = "*write email here"
+      }
+      else if(!SignEmail_input_check){
+        SignEmail_Error.innerHTML = "*write correct email "
+      }
+      else if(SignPassword == ""){
+        SignPassword_Error.innerHTML = "*write password here"
+      }
+      else if(!SignPassword_input_check){
+        SignPassword_Error.innerHTML = "*password must contain atleast 8 characters "
+      }
+      else if(SignPassword !== SignConfPass){
+        SignConfPass_Error.innerHTML = "*password does not match*"
+      }
+       else {
+   
+        let existingData = localStorage.getItem("AdminData");
+        let dataArray = [];
+
+        if (existingData) {
+        
+          dataArray = JSON.parse(existingData);
+          var AdminData = {
+            SignName: SignName,
+            SignEmail: SignEmail,
+            SignPassword: SignPassword,
+         
+          };
+
+         
+
+          var fetched = dataArray.some(
+            (x) => x.SignEmail == SignEmail && x.SignPassword == SignPassword
+          );
+
+          if (fetched) {
+            alert("user already exist, try to log in");
+            document.getElementById("signupForm").reset();
+          } else {
+            dataArray.push(AdminData);
+            localStorage.setItem("Admindata", JSON.stringify(dataArray));
+            localStorage.setItem("current_user", AdminData.SignName);
+            document.getElementById("signupForm").reset();
+
+            alert("Sign up successful!");
+         
+            window.location.href = "Dashboard.HTML";
+          }
+        } else {
+          var AdminData = {
+            SignName: SignName,
+            SignEmail: SignEmail,
+            SignPassword: SignPassword,
+            user_f: SignName.charAt(0)
+          };
+          dataArray.push(AdminData);
+          localStorage.setItem("Admindata", JSON.stringify(dataArray));
+          localStorage.setItem("current_user_fname", AdminData.SignName);
+          alert("Sign up successful!");
+          window.location.href = "Dashboard.HTML";
+
+          document.getElementById("signupForm").reset();
+        }
+      }
+    }
+
+   
+
+
+
+
+   
+      function Adminloginbtn() {
+        var loginEmail = document.getElementById("loginEmail").value;
+        var loginPassword = document.getElementById("loginPassword").value;
+        if (!loginEmail || !loginPassword) {
+          alert("Please fill out all fields.");
+          return;
+        } else {
+          var userdata = JSON.parse(localStorage.getItem("Admindata"));
+          var fetched = userdata.some(
+            (x) => x.SignEmail == loginEmail && x.SignPassword == loginPassword
+          );
+          if (fetched) {
+            var current_user = userdata.filter(
+              (x) => x.SignEmail == loginEmail && x.SignPassword == loginPassword
+            )[0];
+            localStorage.setItem("current_user_fname", current_user.SignName);
+            window.location.href = "Dashboard.HTML";
+            alert("Login successful!");
+          } else {
+            alert("Login failed. Invalid email or password.");
+          }
+        }
+      }
+
+
+  </script>
+</body>
+
+</html>

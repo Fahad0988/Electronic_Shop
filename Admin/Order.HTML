@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+
+    <!--         Link cdns        -->
+
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Dashboard.CSS">
+    <link rel="stylesheet" href="Viewproduct.CSS">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+
+        <div class="bg-white" id="sidebar-wrapper">
+
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <i class="fa fa-television"></i>E<span class="span-logo">lectronic Shop</span>
+            </div>
+
+            <div class="list-group list-group-flush my-3">
+                <a href="Dashboard.HTML"
+                    class="list-group-item list-group-item-action bg-transparent second-Dash active">
+                    <i class="fa fa-tachometer-alt me-2"></i>Dashboard
+                </a>
+                <a href="Addproduct.HTML"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa fa-plus me-2"></i>Add Product
+                </a>
+                <a href="Viewproduct.HTML"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa fa-gift me-2"></i>View Product
+                </a>
+                <a href="Order.HTML" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa fa-shopping-cart me-2"></i>Order
+                </a>
+
+                <a href="" type="button" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa fa-project-diagram me-2"></i>Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="exampleModalLabel">Logout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         Are You Sure You Want To Logout ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button"  class="btn btn-success">
+          <a href="AdminLogin.HTML">  Ok</a>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-item-center">
+                    <i class="fa fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">Dashboard</h2>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item-dropdown">
+                            <a href="" class="nav-link dropdown second-user fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fa fa-user me-2">&nbsp;<span id="Dashborad_Login"></span></i>
+                                <script>
+                                    // var user_icon = document.getElementById("user_icon");
+                                    var Dashborad_Login = document.getElementById("Dashborad_Login");
+                                    var Admindata = JSON.parse(localStorage.getItem("Admindata"));
+                                    var activeUser = localStorage.getItem("current_user_fname");
+                                    if (activeUser) {
+                                        // user_name.style.display = "flex";
+                                        //   user_icon.style.display = "none";
+                                        Dashborad_Login.innerHTML = activeUser;
+                                    }
+                                    // else {
+                                    //   user_name.style.display = "none";
+                                    //   user_icon.style.display = "flex";
+                                    // }
+                                </script>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="row my-2" id="viewpro">
+                <h3 class="mb-4">Order</h3>
+                <div class="col">
+                    <table class="table bg-white rounded shadow-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" width="50">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Phone</td>
+                                <td>Fahad</td>
+                                <td>1</td>
+                                <td>$1699</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>AC</td>
+                                <td>Mirza Usman</td>
+                                <td>8</td>
+                                <td>$3399</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>AC</td>
+                                <td>Mirza Usman</td>
+                                <td>3</td>
+                                <td>$3399</td>
+                            </tr> <tr>
+                                <th scope="row">4</th>
+                                <td>AC</td>
+                                <td>Mirza Usman</td>
+                                <td>3</td>
+                                <td>$3399</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <script src="Dashboard.JS"></script>
+
+</body>
+
+</html>

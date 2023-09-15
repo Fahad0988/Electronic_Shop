@@ -1,0 +1,28 @@
+#body{
+    background: linear-gradient(to right,
+    #baf3d7,
+    #c2f5de,
+    #cbf7e4,
+    #d4f8ea,
+    #ddfaef);
+}
+#form {
+    background-color: transparent;
+    border: none;
+}
+
+#Category {
+    height: 38px;
+    border: 1px solid #CED4D9;
+    border-radius: 3px;
+}
+
+#Btnstock:hover {
+    box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+}
+
+
+input:hover {
+    border-color: rgb(106, 161, 143);
+}
+
